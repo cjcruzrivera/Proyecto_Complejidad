@@ -1,13 +1,13 @@
-var float: x1;
-var float: x2;
-var float: x3;
-var float: x4;
-var float: x5;
-var float: x6;
-var float: x7;
-var float: x8;
-var float: x9;
-var float: c;
+var int: x1;
+var int: x2;
+var int: x3;
+var int: x4;
+var int: x5;
+var int: x6;
+var int: x7;
+var int: x8;
+var int: x9;
+var 0..10000: c;
 
 constraint 3 * x1 + 2 *x2 + 2*x3 + x4 + x5 + x6 - x7 = 300;
 constraint x2 + 2 * x4 + x5 - x8 = 200;

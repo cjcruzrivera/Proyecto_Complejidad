@@ -10,4 +10,4 @@ constraint c = 40*x1 + 30*x2;
 
 solve maximize c;
 
-output ["x1=", show(x1), "\nx2=", show(x2)];
+output ["Sillas = ", show(x1), "\nMuebles = ", show(x2)];

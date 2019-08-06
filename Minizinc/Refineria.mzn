@@ -1,6 +1,6 @@
-var float: x1;
-var float: x2;
-var float: c;
+var int: x1;
+var int: x2;
+var 0..10000: c;
 
 constraint 0.4 * x1 + 0.3 *x2 >= 8;
 constraint 0.2 * x1 + 0.45 *x2 >= 6;
@@ -11,4 +11,4 @@ constraint c = 40 * x1 + 30 *x2;
 
 solve minimize c;
 
-output ["x1=", show(x1), "\n x2=", show(x2)];
+output ["Aceite crudo ligero = ", show(x1), "\n Aceite crudo pesado = ", show(x2)];
