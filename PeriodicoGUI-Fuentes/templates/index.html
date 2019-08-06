@@ -2,17 +2,130 @@
 
 
 {% block content %}
-<form action="/resultado" method="POST">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary">Calcular</button>
+<form action="/resultado" method="POST" class="needs-validation" novalidate>
+      <table class="table table-responsive w-100" id="tablaDatos">
+        <thead>
+          <tr>
+            <th class="font-weight-bold">Temas</th>
+            <th class="font-weight-bold">Núm. Mínimo páginas</th>
+            <th class="font-weight-bold">Núm. Máximo páginas</th>
+            <th class="font-weight-bold">Potenciales Lectores (por página)</th>
+            <th>
+              <button type="button" class="btn btn-info" id="newTopic">
+                +
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr id="example" class="d-none">
+                <td class="font-weight-bold">
+                  <input class="form-control newTopicLabel" type="text">
+                  <div class="invalid-feedback">
+                    Ingrese un nombre de Tema
+                  </div>
+                </td>
+                <td>
+                  <input required class="form-control min" type="number" name="min" id="min">
+                </td>
+                <td>
+                  <input required class="form-control max" type="number" name="max" id="max">
+                </td>
+                <td>
+                  <input required class="form-control potencial" type="number" name="potencial" id="potencial">
+                </td>
+                <td>
+                  <button class="btn btn-success addTopic" type="button">+</button>
+                </td>
+              </tr>
+          <tr>
+            <td class="font-weight-bold">
+              Internacional
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="minInternacional" id="minInternacional">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="maxInternacional" id="maxInternacional">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="potencialInternacional" id="potencialInternacional">
+            </td>
+            <td>
+              <button class="btn btn-warning removeTopic" type="button">-</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">
+              Nacional
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="minNacional" id="minNacional">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="maxNacional" id="maxNacional">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="potencialNacional" id="potencialNacional">
+            </td>
+            <td>
+              <button class="btn btn-warning removeTopic" type="button">-</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">
+              Local
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="minLocal" id="minLocal">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="maxLocal" id="maxLocal">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="potencialLocal" id="potencialLocal">
+            </td>
+            <td>
+              <button class="btn btn-warning removeTopic" type="button">-</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">
+              Deportes
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="minDeportes" id="minDeportes">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="maxDeportes" id="maxDeportes">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="potencialDeportes" id="potencialDeportes">
+            </td>
+            <td>
+              <button class="btn btn-warning removeTopic" type="button">-</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-weight-bold">
+              Cultura
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="minCultura" id="minCultura">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="maxCultura" id="maxCultura">
+            </td>
+            <td>
+              <input required class="form-control" type="number" name="potencialCultura" id="potencialCultura">
+            </td>
+            <td>
+              <button class="btn btn-warning removeTopic" type="button">-</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" id="calcular" class="btn btn-primary">Calcular</button>
 </form>
 {% endblock content %}
     
