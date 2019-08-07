@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<form action="/resultado" method="POST" class="needs-validation" novalidate>
+<form action="/" method="post" class="needs-validation" novalidate>
       <table class="table table-responsive w-100" id="tablaDatos">
         <thead>
           <tr>
@@ -20,19 +20,29 @@
         <tbody>
             <tr id="example" class="d-none">
                 <td class="font-weight-bold">
-                  <input class="form-control newTopicLabel" type="text">
+                  <input class="form-control newTopicLabel" name="tema" type="text">
                   <div class="invalid-feedback">
                     Ingrese un nombre de Tema
                   </div>
                 </td>
                 <td>
-                  <input required class="form-control min" type="number" name="min" id="min">
+                  <input class="form-control min" type="number" min="0" name="min" id="min">
+                  <div class="invalid-feedback">
+                    Por favor ingrese un valor válido<br> Menor o igual al máximo.
+                  </div>
                 </td>
                 <td>
-                  <input required class="form-control max" type="number" name="max" id="max">
+                  <input class="form-control max" type="number" min="0" name="max" id="max">
+                  <div class="invalid-feedback">
+                    Por favor ingrese un valor válido<br> Mayor o igual al mínimo.
+                  </div>
                 </td>
                 <td>
-                  <input required class="form-control potencial" type="number" name="potencial" id="potencial">
+                  <input class="form-control potencial" type="number" min="0" name="potencial" id="potencial">
+                  <div class="invalid-feedback">
+                    Por favor ingrese un valor válido <br>
+                    Mayor o igual a cero  
+                  </div>
                 </td>
                 <td>
                   <button class="btn btn-success addTopic" type="button">+</button>
@@ -41,15 +51,26 @@
           <tr>
             <td class="font-weight-bold">
               Internacional
+              <input type="text" class="d-none" name="tema" id="tema" value="Internacional">
             </td>
             <td>
-              <input required class="form-control" type="number" name="minInternacional" id="minInternacional">
+              <input required class="form-control" type="number" min="0" name="minInternacional" id="minInternacional">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Menor o igual al máximo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="maxInternacional" id="maxInternacional">
+              <input required class="form-control" type="number" min="0" name="maxInternacional" id="maxInternacional">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Mayor o igual al mínimo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="potencialInternacional" id="potencialInternacional">
+              <input required class="form-control" type="number" min="0" name="potencialInternacional" id="potencialInternacional">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido <br>
+                Mayor o igual a cero  
+              </div>
             </td>
             <td>
               <button class="btn btn-warning removeTopic" type="button">-</button>
@@ -58,15 +79,27 @@
           <tr>
             <td class="font-weight-bold">
               Nacional
+              <input type="text" class="d-none" name="tema" id="tema" value="Nacional">
+
             </td>
             <td>
-              <input required class="form-control" type="number" name="minNacional" id="minNacional">
+              <input required class="form-control" type="number" min="0" name="minNacional" id="minNacional">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Menor o igual al máximo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="maxNacional" id="maxNacional">
+              <input required class="form-control" type="number" min="0" name="maxNacional" id="maxNacional">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Mayor o igual al mínimo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="potencialNacional" id="potencialNacional">
+              <input required class="form-control" type="number" min="0" name="potencialNacional" id="potencialNacional">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido <br>
+                Mayor o igual a cero  
+              </div>
             </td>
             <td>
               <button class="btn btn-warning removeTopic" type="button">-</button>
@@ -75,15 +108,26 @@
           <tr>
             <td class="font-weight-bold">
               Local
+              <input type="text" class="d-none" name="tema" id="tema" value="Local">
             </td>
             <td>
-              <input required class="form-control" type="number" name="minLocal" id="minLocal">
+              <input required class="form-control" type="number" min="0" name="minLocal" id="minLocal">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Menor o igual al máximo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="maxLocal" id="maxLocal">
+              <input required class="form-control" type="number" min="0" name="maxLocal" id="maxLocal">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Mayor o igual al mínimo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="potencialLocal" id="potencialLocal">
+              <input required class="form-control" type="number" min="0" name="potencialLocal" id="potencialLocal">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido <br>
+                Mayor o igual a cero  
+              </div>
             </td>
             <td>
               <button class="btn btn-warning removeTopic" type="button">-</button>
@@ -92,15 +136,26 @@
           <tr>
             <td class="font-weight-bold">
               Deportes
+              <input type="text" class="d-none" name="tema" id="tema" value="Deportes">
             </td>
             <td>
-              <input required class="form-control" type="number" name="minDeportes" id="minDeportes">
+              <input required class="form-control" type="number" min="0" name="minDeportes" id="minDeportes">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Menor o igual al máximo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="maxDeportes" id="maxDeportes">
+              <input required class="form-control" type="number" min="0" name="maxDeportes" id="maxDeportes">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Mayor o igual al mínimo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="potencialDeportes" id="potencialDeportes">
+              <input required class="form-control" type="number" min="0" name="potencialDeportes" id="potencialDeportes">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido <br>
+                Mayor o igual a cero  
+              </div>
             </td>
             <td>
               <button class="btn btn-warning removeTopic" type="button">-</button>
@@ -109,15 +164,26 @@
           <tr>
             <td class="font-weight-bold">
               Cultura
+              <input type="text" class="d-none" name="tema" id="tema" value="Cultura">
             </td>
             <td>
-              <input required class="form-control" type="number" name="minCultura" id="minCultura">
+              <input required class="form-control" type="number" min="0" name="minCultura" id="minCultura">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Menor o igual al máximo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="maxCultura" id="maxCultura">
+              <input required class="form-control" type="number" min="0" name="maxCultura" id="maxCultura">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido<br> Mayor o igual al mínimo.
+              </div>
             </td>
             <td>
-              <input required class="form-control" type="number" name="potencialCultura" id="potencialCultura">
+              <input required class="form-control" type="number" min="0" name="potencialCultura" id="potencialCultura">
+              <div class="invalid-feedback">
+                Por favor ingrese un valor válido <br>
+                Mayor o igual a cero  
+              </div>
             </td>
             <td>
               <button class="btn btn-warning removeTopic" type="button">-</button>
