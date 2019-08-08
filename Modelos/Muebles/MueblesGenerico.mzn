@@ -9,13 +9,13 @@ array [1..n] of int: b;
 int: P;
 int: T;
 
-array [1..n] of int: x;
+array [1..n] of var 0..10000: x;
 
 %Objetivo
 
 var int: utilidad;
-constraint sum(j in 1..n)(x[j] * p[j]) >= P;
-constraint sum(j in 1..n)(x[j] * t[j]) >= T;
+constraint sum(j in 1..n)(x[j] * p[j]) <= P;
+constraint sum(j in 1..n)(x[j] * t[j]) <= T;
 
 constraint utilidad = sum(j in 1..n)(x[j] * b[j]);
 solve maximize utilidad;

@@ -1,12 +1,12 @@
 %Modelo genérico
 
 int: n;
-array [1..n] of int: gas;
-array [1..n] of int: heat;
-array [1..n] of int: jet;
-array [1..n] of int: lube;
+array [1..n] of float: gas;
+array [1..n] of float: heat;
+array [1..n] of float: jet;
+array [1..n] of float: lube;
 
-array [1..n] of int: cost;
+array [1..n] of var 0..10000: cost;
 
 int: RG;
 int: RH;
