@@ -25,7 +25,19 @@
     }, false);
 })();
 
-
+function repetido(valTopic) {
+    var exists = false;
+    var cantidad   = 0;
+    $(".tema").each(function () {
+        if($(this).val() == valTopic){
+            cantidad++; 
+        }
+    })
+    if(cantidad > 1){
+        exists = true;
+    }
+    return exists;
+}
 
 $(document).ready(function () {
     $(".removeTopic").click(function () {
@@ -45,8 +57,7 @@ $(document).ready(function () {
         $(".addTopic").on("click", function () {
             var element = $("#newTopicValue");
             var valTopic = element.val();
-            if (valTopic == "") {
-                console.log("VACIO")
+            if (valTopic == "" || repetido(valTopic)) {
                 element.addClass("is-invalid");
                 element.next(".invalid-feedback").show()
                 return;
@@ -59,6 +70,7 @@ $(document).ready(function () {
                 element.parent().append(valTopic);
 
                 element.removeClass("newTopicLabel");
+                element.removeAttr("id");
                 element.addClass("d-none");
                 $(this).removeClass("addTopic btn-success").addClass("removeTopic btn-warning").text("-");
                 $(".removeTopic").on("click", function () {
