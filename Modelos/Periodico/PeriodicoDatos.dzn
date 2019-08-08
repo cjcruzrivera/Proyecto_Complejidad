@@ -1,5 +1,5 @@
-n = 2 
+n = 1 
 P = 10 
-minP = [5, 3]
-maxP = [6, 8]
-readers = [2500, 3000]
+minP = [43]
+maxP = [55]
+readers = [6]

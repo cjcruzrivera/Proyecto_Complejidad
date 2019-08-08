@@ -35,6 +35,7 @@ function repetido(valTopic) {
     })
     if(cantidad > 1){
         exists = true;
+        $("#newTopicValue").val("")
     }
     return exists;
 }
