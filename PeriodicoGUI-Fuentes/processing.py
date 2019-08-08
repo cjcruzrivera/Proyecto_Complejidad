@@ -22,27 +22,27 @@ def processFile(request):
 
     file = open("Modelos/Periodico/PeriodicoDatos.dzn", "w")
     cantidad = len(temasA)
-    file.write("n = " + str(cantidad) + " \n")
-    file.write("P = " + capacidad + " \n")
+    file.write("n = " + str(cantidad) + "; \n")
+    file.write("P = " + capacidad + "; \n")
 
     textMin = "minP = ["
     for minP in minA:
         textMin += minP+", "
     textMin = textMin.strip(", ")
-    textMin += "]\n"
+    textMin += "];\n"
     file.write(textMin)
 
     textMax = "maxP = ["
     for maxP in maxA:
         textMax += maxP+", "
     textMax = textMax.strip(", ")
-    textMax += "]\n"
+    textMax += "];\n"
     file.write(textMax)
 
     textPot = "readers = ["
     for potP in potencialA:
         textPot += potP+", "
     textPot = textPot.strip(", ")
-    textPot += "]"
+    textPot += "];"
     file.write(textPot)
     file.close()
