@@ -18,9 +18,16 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td colspan="4">
+              <div class="invalid-feedback" id="mensajeNinguno">
+                Debe crear al menos un tema para realizar el calculo
+              </div>
+            </td>
+          </tr>
             <tr id="example" class="d-none">
                 <td class="font-weight-bold">
-                  <input class="form-control newTopicLabel" name="tema" type="text">
+                  <input class="form-control newTopicLabel tema" name="tema" type="text">
                   <div class="invalid-feedback">
                     Ingrese un nombre de Tema
                   </div>
@@ -51,7 +58,7 @@
           <tr>
             <td class="font-weight-bold">
               Internacional
-              <input type="text" class="d-none" name="tema" id="tema" value="Internacional">
+              <input type="text" class="d-none tema" name="tema" id="tema" value="Internacional">
             </td>
             <td>
               <input required class="form-control" type="number" min="0" name="minInternacional" id="minInternacional">
@@ -79,7 +86,7 @@
           <tr>
             <td class="font-weight-bold">
               Nacional
-              <input type="text" class="d-none" name="tema" id="tema" value="Nacional">
+              <input type="text" class="d-none tema" name="tema" id="tema" value="Nacional">
 
             </td>
             <td>
@@ -108,7 +115,7 @@
           <tr>
             <td class="font-weight-bold">
               Local
-              <input type="text" class="d-none" name="tema" id="tema" value="Local">
+              <input type="text" class="d-none tema" name="tema" id="tema" value="Local">
             </td>
             <td>
               <input required class="form-control" type="number" min="0" name="minLocal" id="minLocal">
@@ -136,7 +143,7 @@
           <tr>
             <td class="font-weight-bold">
               Deportes
-              <input type="text" class="d-none" name="tema" id="tema" value="Deportes">
+              <input type="text" class="d-none tema" name="tema" id="tema" value="Deportes">
             </td>
             <td>
               <input required class="form-control" type="number" min="0" name="minDeportes" id="minDeportes">
@@ -164,7 +171,7 @@
           <tr>
             <td class="font-weight-bold">
               Cultura
-              <input type="text" class="d-none" name="tema" id="tema" value="Cultura">
+              <input type="text" class="d-none tema" name="tema" id="tema" value="Cultura">
             </td>
             <td>
               <input required class="form-control" type="number" min="0" name="minCultura" id="minCultura">

@@ -7,11 +7,17 @@
         var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
                 var validity = form.checkValidity();
-                console.log(validity)
-                if (validity === false) {
+                var temas = document.getElementsByClassName("tema").length;;
+                if (validity === false ) {
                     event.preventDefault();
                     event.stopPropagation();
-
+                }
+                if(temas == 1){
+                    event.preventDefault();
+                    event.stopPropagation();
+                    $("#mensajeNinguno").show();
+                }else{
+                    $("#mensajeNinguno").hide();
                 }
                 form.classList.add('was-validated');
             }, false);
@@ -33,8 +39,7 @@ $(document).ready(function () {
         var newRow = $("#example").clone().appendTo('tbody');
         newRow.removeClass("d-none");
         newRow.find(".newTopicLabel").attr("id", "newTopicValue");
-
-
+        $("#mensajeNinguno").hide();
 
 
         $(".addTopic").on("click", function () {
@@ -62,6 +67,39 @@ $(document).ready(function () {
                 $("#calcular").prop("disabled", false);
                 $(".removeTopic").prop("disabled", false);
                 $("#newTopic").prop("disabled", false);
+                $("input[name^='max']").on("change", function () {
+                    var divInvalid = $(this).next(".invalid-feedback"); 
+                    divInvalid.hide();
+                    $(this).removeClass("is-invalid");
+                    var name = $(this).attr("name");
+                    var topicName = name.split("max")[1];
+                    var minVal = $("#min"+topicName).val();
+                    var maxVal = $(this).val();
+                    if(minVal == "" || maxVal == ""){
+                        return;
+                    }
+                    if(minVal > maxVal){
+                        divInvalid.show();
+                        $(this).addClass("is-invalid").val("");
+                    }
+                })
+            
+                $("input[name^='min']").on("change", function () {
+                    var divInvalid = $(this).next(".invalid-feedback"); 
+                    divInvalid.hide();
+                    $(this).removeClass("is-invalid");
+                    var name = $(this).attr("name");
+                    var topicName = name.split("min")[1];
+                    var maxVal = $("#max"+topicName).val();
+                    var minVal = $(this).val();
+                    if(minVal == "" || maxVal == ""){
+                        return;
+                    }
+                    if(minVal > maxVal){
+                        divInvalid.show();
+                        $(this).addClass("is-invalid").val("");
+                    }
+                })
             }
 
         })
