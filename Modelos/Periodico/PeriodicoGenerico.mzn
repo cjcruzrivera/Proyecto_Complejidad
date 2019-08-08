@@ -17,4 +17,4 @@ constraint forall(j in 1..n)(x[j] <= maxP[j]);
 constraint sum(j in 1..n)(x[j] * b[j]) <= P;
 
 constraint utilidad = sum(j in 1..n)(x[j]*b[j] * readers[j]);
-solve minimize utilidad;
+solve maximize utilidad;
