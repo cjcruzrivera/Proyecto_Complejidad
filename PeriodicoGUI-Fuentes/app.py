@@ -10,6 +10,7 @@ def index():
         resultado = ""
         temas = request.form.getlist('tema')
         temasA = []
+        capacidad = request.form.get("capacidad", 10)
         for tema in temas:
             if tema == "":
                 continue

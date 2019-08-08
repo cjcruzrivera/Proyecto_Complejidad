@@ -3,6 +3,18 @@
 
 {% block content %}
 <form action="/" method="post" class="needs-validation" novalidate>
+  <div class="row">
+    <div class="col-md-2 offset-md-4 pt-2">
+      CAPACIDAD:
+    </div>
+    <div class="col-md-3">
+      <input type="number" min="1" class="form-control" name="capacidad" required placeholder="Ingrese la cantidad" value="10">
+      <div class="invalid-feedback">
+        Ingrese una capacidad válida mayor igual a 1.
+      </div>
+    </div>
+  </div>
+  <div class="row pt-2">
       <table class="table table-responsive w-100" id="tablaDatos">
         <thead>
           <tr>
@@ -198,6 +210,8 @@
           </tr>
         </tbody>
       </table>
+  </div>
+    
       <button type="submit" id="calcular" class="btn btn-primary">Calcular</button>
 </form>
 {% endblock content %}
