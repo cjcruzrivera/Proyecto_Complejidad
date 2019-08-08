@@ -1,3 +1,4 @@
 codealike.json
 venv/
 .vscode/settings.json
+*.pyc
