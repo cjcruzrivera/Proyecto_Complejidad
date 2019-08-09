@@ -1,5 +1,5 @@
 from flask import Flask, abort, request, render_template, redirect
-from processing import processFile
+from processing import processFile, executeMinizinc
 app = Flask(__name__)
 
 
@@ -7,7 +7,8 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         resultado = ""
-        processFile(request)
+        temas = processFile(request)
+        resultado = executeMinizinc(temas)
         return render_template("resultado.html", resultado=resultado)
     elif request.method == "GET":
         return render_template("index.html")

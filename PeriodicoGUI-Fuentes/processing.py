@@ -1,6 +1,33 @@
 import os
 
+def executeMinizinc(temas):
+    command = "minizinc Modelos/Periodico/PeriodicoGenerico.mzn Modelos/Periodico/PeriodicoDatos.dzn"
+    myCmd = os.popen(command).read()
+    
+    responseMin = myCmd.split(";\n")
+    paginas = responseMin[0].split("[")[1].split(",")
+    booleanos = responseMin[1].split("[")[1].split(",")
+    utilidad = responseMin[2].split("= ")[1]
+    pags = []
+    bools = []
+    for pag in paginas:
+        pags.append(int(pag.strip().strip("])")))
+    
+    for boolean in booleanos:
+        bools.append(int(boolean.strip().strip("])")))
+    
+    response = {
+        "temas" : [],
+        "utilidad" : utilidad
+    }
+    for i in range(len(temas)):
+        tema = {
+            "nombre" : temas[i],
+            "paginas": bools[i]*pags[i]
+        }
+        response["temas"].append(tema)
 
+    return response    
 def processFile(request):
     temas = request.form.getlist('tema')
     temasA = []
@@ -46,3 +73,5 @@ def processFile(request):
     textPot += "];"
     file.write(textPot)
     file.close()
+
+    return temasA

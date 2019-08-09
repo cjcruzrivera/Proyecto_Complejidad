@@ -2,7 +2,40 @@
 
 
 {% block content %}
-{{resultado}}
+<div class="row">
+    <div class="col-md-2 offset-md-4 pt-2">
+        UTILIDAD:
+    </div>
+    <div class="col-md-3">
+        <input type="text" min="1" class="form-control" name="capacidad" disabled placeholder="Ingrese la cantidad"
+            value="{{resultado.utilidad}} lectores">
+    </div>
+</div>
+<div class="row pt-2">
+    <div class="col-md-8 offset-md-4">
+        <table class="table table-responsive w-100" id="tablaDatos">
+            <thead>
+                <tr>
+                    <th class="font-weight-bold">Temas</th>
+                    <th class="font-weight-bold">Número de páginas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tema in resultado.temas %}
+                <tr>
+                    <td>
+                        {{tema.nombre}}
+                    </td>
+                    <td>
+                        {{tema.paginas}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 <a href="/" class="btn btn-success">VOLVER</a>
 {% endblock content %}
-    
